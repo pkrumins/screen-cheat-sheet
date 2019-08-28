@@ -8,232 +8,241 @@
 
 \documentclass{article}
 
-\usepackage[left=1.5cm,top=1cm,right=1.5cm,bottom=1cm,nohead,nofoot]{geometry}
+\usepackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{menukeys}
 
 \usepackage[pdftex]{hyperref}
 \hypersetup{pdftitle={Screen VT100/ANSI Terminal Emulator Cheat Sheet}}
 \hypersetup{pdfauthor={Peteris Krumins (peter@catonmat.net)}}
 \hypersetup{pdfkeywords={cheat sheet, cheat sheat, cheet sheet, cheet sheat, screen, ansi, vt100, terminal, emulator, unix, linux}}
 \hypersetup{pdfsubject={http://www.catonmat.net - good coders code, great reuse}}
-\hypersetup{colorlinks}
+%\hypersetup{colorlinks}
 
-\pagestyle{empty}
+\pagestyle{fancy}
+\fancypagestyle{plain}{}
+\pagenumbering{gobble}
+
+\title{Screen VT100/ANSI Terminal Emulator Cheat Sheet\\
+	Default Keyboard Shortcuts}
+\author{}
+\date{}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\renewcommand{\arraystretch}{1.3}
+
 
 % -----------------------------------------------------------------------
 
 \begin{document}
+	\maketitle
+	
+	\fancyfoot[L]{
+		\framebox{\parbox{3.5in}{
+		\copyright\ 2007 \textbf{Peteris Krumins} (peter@catonmat.net)\\
+		\href{http://www.catonmat.net}{http://www.catonmat.net} - good coders code, great reuse}}
+	}
 
-\begin{center}
-\Large Screen VT100/ANSI Terminal Emulator Cheat Sheet \\
-\Large Default Keyboard Shortcuts
-\end{center}
-
-\vspace{0.6in}
-
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|p{3.5cm}|p{3cm}|p{10cm}|}
-\hline
-\large\textbf{Shortcut} & \large\textbf{Command} & \large\textbf{Description} \\
-\hline
-\textbf{C-a '} & select & Prompt for a window name or number to switch to. \\
-\hline
-\textbf{C-a "} & windowlist -b & Present a list of all windows for selection. \\
-\hline
-\textbf{C-a 0\ldots 9} & select 0\ldots select 9 & Switch to window number 0\ldots 9. \\
-\hline
-\textbf{C-a -} & select - & Switch to the blank window. \\
-\hline
-\textbf{C-a [TAB]} & focus & Switch the input focus to the next region. \\
-\hline
-\textbf{C-a C-a} & other & Toggle  to  the  window  displayed previously. \\
-\hline
-\textbf{C-a a} & meta & Send the command character (C-a) to window. \\
-\hline
-\textbf{C-a A} & title & Allow the user to enter a name for the current window. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a b} \\
-\textbf{C-a C-b} %
-} & break & Send a break to window. \\
-\hline
-\textbf{C-a B} & pow\_break & Reopen the terminal line and send a break. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a c} \\
-\textbf{C-a C-c} %
-} & screen & Create a new window with a shell and switch to that window. \\
-\hline
-\textbf{C-a C} & clear & Clear the screen. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a d} \\
-\textbf{C-a C-d} %
-} & detach & Detach screen from this terminal. \\
-\hline
-\textbf{C-a D D} & pow\_detach & Detach and logout. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a f} \\
-\textbf{C-a C-f} %
-} & flow & Toggle flow on, off or auto. \\
-\hline
-\textbf{C-a F} & fit & Resize the window to the current region size. \\
-\hline
-\textbf{C-a C-g} & vbell & Toggles screen's visual bell mode. \\
-\hline
-\textbf{C-a h} & hardcopy & Write a hardcopy of the current window to the file "hardcopy.n". \\
-\hline
-\textbf{C-a H} & log & Begins/ends logging of the current window to the file "screenlog.n". \\
-\hline
-\parbox{1in}{%
-\textbf{C-a i} \\
-\textbf{C-a C-i} %
-} & info & Show info about this window. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a k} \\
-\textbf{C-a C-k} %
-} & kill & Destroy current window. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a l} \\
-\textbf{C-a C-l} %
-} & redisplay & Fully refresh current window. \\
-\hline
-\textbf{C-a L} & login & Toggle this windows login slot. Available only if screen is configured to update the utmp database. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a m} \\
-\textbf{C-a C-m} %
-} & lastmsg & Repeat the last message displayed in the message line. \\
-\hline
-\textbf{C-a M} & monitor & Toggles monitoring of the current window. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a [space]} \\
-\textbf{C-a n} \\
-\textbf{C-a C-n} %
-} & next & Switch to the next window. \\
-\hline
-\textbf{C-a N} & number & Show the number (and title) of the current window. \\
-\hline
-\parbox{1.2in}{%
-\textbf{C-a [back-space]} \\
-\textbf{C-a h} \\
-\textbf{C-a p} \\
-\textbf{C-a C-p} %
-} & prev & Switch to the previous window (opposite of \textbf{C-a n}). \\
-\hline
-\end{tabular}
-
-\vfill
-
-\framebox{\parbox{3.5in}{
-\copyright\ 2007 \textbf{Peteris Krumins} (peter@catonmat.net)
-
-\href{http://www.catonmat.net}{http://www.catonmat.net} - good coders code, great reuse}}
-
-%---------------------------------------------------------------------------
-
-\newpage
-
-\mbox{}
-\vspace{1.2in}
-
-\begin{tabular}{|p{3.5cm}|p{3cm}|p{10cm}|}
-\hline
-\large\textbf{Shortcut} & \large\textbf{Command} & \large\textbf{Description} \\
-\hline
-\parbox{1in}{%
-\textbf{C-a q} \\
-\textbf{C-a C-q} %
-} & xon & Send a control-q to the current window. \\
-\hline
-\textbf{C-a Q} & only & Delete all regions but the current one. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a r} \\
-\textbf{C-a C-r} %
-} & wrap & Toggle the current window's line-wrap setting (turn the  current  window's automatic margins on and off). \\
-\hline
-\parbox{1in}{%
-\textbf{C-a s} \\
-\textbf{C-a C-s} %
-} & xoff & Send a control-s to the current window. \\
-\hline
-\textbf{C-a S} & split & Split the current region into two new ones. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a t} \\
-\textbf{C-a C-t} %
-} & time & Show system information. \\
-\hline
-\textbf{C-a v} & version & Display the version and compilation date. \\
-\hline
-\textbf{C-a C-v} & digraph & Enter digraph. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a w} \\
-\textbf{C-a C-w} %
-} & windows & Show a list of window. \\
-\hline
-\textbf{C-a W} & width & Toggle 80/132 columns. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a x} \\
-\textbf{C-a C-x} %
-} & lockscreen & Lock this terminal. \\
-\hline
-\textbf{C-a X} & remove & Kill the current region. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a z} \\
-\textbf{C-a C-z} %
-} & suspend & Suspend screen. Your system must support BSD-style job-control. \\
-\hline
-\textbf{C-a Z} & reset & Reset the virtual terminal to its "power-on" values. \\
-\hline
-\textbf{C-a .} & dumptermcap & Write out a ".termcap" file. \\
-\hline
-\textbf{C-a ?} & help & Show key bindings. \\
-\hline
-\textbf{C-a C-\textbackslash} & quit & Kill all windows and terminate screen. \\
-\hline
-\textbf{C-a :} & colon & Enter command line mode. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a [} \\
-\textbf{C-a C-[} \\
-\textbf{C-a [ESC]} %
-} & copy & Enter copy/scrollback mode. \\
-\hline
-\textbf{C-a ]} & paste . & Write  the contents of the paste buffer to the stdin queue of the current window. \\
-\hline
-\parbox{1in}{%
-\textbf{C-a \{} \\
-\textbf{C-a \}} %
-} & history & Copy and paste a previous (command) line. \\
-\hline
-\textbf{C-a \textgreater} & writebuf & Write paste buffer to a file. \\
-\hline
-\textbf{C-a \textless} & readbuf & Reads the screen-exchange file into the paste buffer. \\
-\hline
-\textbf{C-a =} & removebuf & Removes the file used by \textbf{C-a \textless} and \textbf{C-a \textgreater}. \\
-\hline
-\textbf{C-a ,} & license & Shows where screen comes from, where it went to and why  you  can  use it. \\
-\hline
-\textbf{C-a \_} & silence & Start/stop monitoring the current window for inactivity. \\
-\hline
-\textbf{C-a *} & displays & Show a listing of all currently attached displays. \\
-\hline
-\end{tabular}
-
-\vfill
-
-\framebox{\parbox{3.5in}{
-\copyright\ 2007 \textbf{Peteris Krumins} (peter@catonmat.net)
-
-\href{http://www.catonmat.net}{http://www.catonmat.net} - good coders code, great reuse}}
-
+	
+	\begin{longtable}[c]{|p{3.5cm}|p{3cm}|p{10cm}|}
+		\hline
+		\large\textbf{Shortcut} & \large\textbf{Command} & \large\textbf{Description} \\
+		\hline
+		\endhead
+		
+		\keys{\ctrl+a} \keys{'} & select & Prompt for a window name or number to switch to. \\
+		\hline
+		\keys{\ctrl+a} \keys{"} & windowlist -b & Present a list of all windows for selection. \\
+		\hline
+		\keys{\ctrl+a} \keys{0}\ldots \keys{9} & select 0\ldots select 9 & Switch to window number 0\ldots 9. \\
+		\hline
+		\keys{\ctrl+a} \keys{-} & select - & Switch to the blank window. \\
+		\hline
+		\keys{\ctrl+a} \keys{\tab} & focus & Switch the input focus to the next region. \\
+		\hline
+		\keys{\ctrl+a} \keys{\ctrl+a} & other & Toggle  to  the  window  displayed previously. \\
+		\hline
+		\keys{\ctrl+a} \keys{a} & meta & Send the command character \keys{\ctrl+a} to window. \\
+		\hline
+		\keys{\ctrl+a} \keys{A} & title & Allow the user to enter a name for the current window. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{b} \\
+			\keys{\ctrl+a} \keys{\ctrl+b}
+		\end{tabular}
+		& break & Send a break to window. \\
+		\hline
+		\keys{\ctrl+a} \keys{ B} & pow\_break & Reopen the terminal line and send a break. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{\ctrl+c} \\
+			\keys{\ctrl+a} \keys{c}
+		\end{tabular}
+		& screen & Create a new window with a shell and switch to that window. \\
+		\hline
+		\keys{\ctrl+a} \keys{C} & clear & Clear the screen. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{d} \\
+			\keys{\ctrl+a} \keys{\ctrl+d}
+		\end{tabular}
+		& detach & Detach screen from this terminal. \\
+		\hline
+		\keys{\ctrl+a} \keys{D}\keys{D} & pow\_detach & Detach and logout. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{f} \\
+			\keys{\ctrl+a} \keys{\ctrl+f}
+		\end{tabular}
+		& flow & Toggle flow on, off or auto. \\
+		\hline
+		\keys{\ctrl+a} \keys{F} & fit & Resize the window to the current region size. \\
+		\hline
+		\keys{\ctrl+a} \keys{\ctrl+g} & vbell & Toggles screen's visual bell mode. \\
+		\hline
+		\keys{\ctrl+a} \keys{h} & hardcopy & Write a hardcopy of the current window to the file ``hardcopy.n''. \\
+		\hline
+		\keys{\ctrl+a} \keys{H} & log & Begins/ends logging of the current window to the file ``screenlog.n''. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{i} \\
+			\keys{\ctrl+a} \keys{\ctrl+i}
+		\end{tabular}
+		& info & Show info about this window. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{k} \\
+			\keys{\ctrl+a} \keys{\ctrl+k}
+		\end{tabular}
+		& kill & Destroy current window. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+		\keys{\ctrl+a} \keys{l} \\
+		\keys{\ctrl+a} \keys{\ctrl+l}
+		\end{tabular}
+		& redisplay & Fully refresh current window. \\
+		\hline
+		\keys{\ctrl+a} \keys{L} & login & Toggle this windows login slot. Available only if screen is configured to update the utmp database. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{m} \\
+			\keys{\ctrl+a} \keys{\ctrl+m}
+		\end{tabular}
+		& lastmsg & Repeat the last message displayed in the message line. \\
+		\hline
+		\keys{\ctrl+a} \keys{M} & monitor & Toggles monitoring of the current window. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{\space} \\
+			\keys{\ctrl+a} \keys{n} \\
+			\keys{\ctrl+a} \keys{\ctrl+n}
+		\end{tabular}
+		& next & Switch to the next window. \\
+		\hline
+		\keys{\ctrl+a} \keys{N} & number & Show the number (and title) of the current window. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{\backspace} \\
+			\keys{\ctrl+a} \keys{h} \\
+			\keys{\ctrl+a} \keys{p} \\
+			\keys{\ctrl+a} \keys{\ctrl+p}
+		\end{tabular}
+		& prev & Switch to the previous window (opposite of \keys{\ctrl+a} \keys{ n}). \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{q} \\
+			\keys{\ctrl+a} \keys{\ctrl+q}
+		\end{tabular}
+		& xon & Send a \keys{\ctrl+q} to the current window. \\
+		\hline
+		\keys{\ctrl+a} \keys{Q} & only & Delete all regions but the current one. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{r} \\
+			\keys{\ctrl+a} \keys{\ctrl+r}
+		\end{tabular}
+		& wrap & Toggle the current window's line-wrap setting (turn the  current  window's automatic margins on and off). \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{s} \\
+			\keys{\ctrl+a} \keys{\ctrl+s}
+		\end{tabular}
+		& xoff & Send a \keys{\ctrl+s} to the current window. \\
+		\hline
+		\keys{\ctrl+a} \keys{S} & split & Split the current region into two new ones. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{t} \\
+			\keys{\ctrl+a} \keys{\ctrl+t}
+		\end{tabular}
+		& time & Show system information. \\
+		\hline
+		\keys{\ctrl+a} \keys{v} & version & Display the version and compilation date. \\
+		\hline
+		\keys{\ctrl+a} \keys{\ctrl+v} & digraph & Enter digraph. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{w} \\
+			\keys{\ctrl+a} \keys{\ctrl+w}
+		\end{tabular}
+		& windows & Show a list of window. \\
+		\hline
+		\keys{\ctrl+a} \keys{W} & width & Toggle 80/132 columns. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{x} \\
+			\keys{\ctrl+a} \keys{\ctrl+x}
+		\end{tabular}
+		& lockscreen & Lock this terminal. \\
+		\hline
+		\keys{\ctrl+a} \keys{X} & remove & Kill the current region. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{z} \\
+			\keys{\ctrl+a} \keys{\ctrl+z}
+		\end{tabular}
+		& suspend & Suspend screen. Your system must support BSD-style job-control. \\
+		\hline
+		\keys{\ctrl+a} \keys{Z} & reset & Reset the virtual terminal to its ``power-on'' values. \\
+		\hline
+		\keys{\ctrl+a} \keys{.} & dumptermcap & Write out a ``.termcap'' file. \\
+		\hline
+		\keys{\ctrl+a} \keys{?} & help & Show key bindings. \\
+		\hline
+		\keys{\ctrl+a} \keys{\ctrl+\textbackslash} & quit & Kill all windows and terminate screen. \\
+		\hline
+		\keys{\ctrl+a} \keys{ :} & colon & Enter command line mode. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{[} \\
+			\keys{\ctrl+a} \keys{\ctrl+[} \\
+			\keys{\ctrl+a} \keys{\esc}
+		\end{tabular}
+		& copy & Enter copy/scrollback mode. \\
+		\hline
+		\keys{\ctrl+a} \keys{]} & paste & Write  the contents of the paste buffer to the stdin queue of the current window. \\
+		\hline
+		\begin{tabular}{@{}l@{}}
+			\keys{\ctrl+a} \keys{\{} \\
+			\keys{\ctrl+a} \keys{\}}
+		\end{tabular}
+		& history & Copy and paste a previous (command) line. \\
+		\hline
+		\keys{\ctrl+a} \keys{\textgreater} & writebuf & Write paste buffer to a file. \\
+		\hline
+		\keys{\ctrl+a} \keys{\textless} & readbuf & Reads the screen-exchange file into the paste buffer. \\
+		\hline
+		\keys{\ctrl+a} \keys{=} & removebuf & Removes the file used by \keys{\ctrl+a} \keys{ \textless} and \keys{\ctrl+a} \keys{ \textgreater}. \\
+		\hline
+		\keys{\ctrl+a} \keys{,} & license & Shows where screen comes from, where it went to and why  you  can  use it. \\
+		\hline
+		\keys{\ctrl+a} \keys{\_} & silence & Start/stop monitoring the current window for inactivity. \\
+		\hline
+		\keys{\ctrl+a} \keys{*} & displays & Show a listing of all currently attached displays. \\
+		\hline
+	\end{longtable}
 \end{document}
 
